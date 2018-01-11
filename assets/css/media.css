@@ -1,0 +1,29 @@
+@media (min-width: 1200px) and (max-width: 1365px) {
+  .sectionOneBG h4{
+    font-size: 3.4em;
+  }
+}
+@media (min-width: 993px) and (max-width: 1061px) {
+  .sectionOneBG h4{
+    font-size: 3.4em;
+  }
+}
+@media (min-width: 200px) and (max-width: 412px) {
+  .sectionOneBG h4{
+    font-size: 2em;
+  }
+  .sectionOneBG h2{
+    font-size: 3em;
+  }
+  .sectionOneBG p{
+    font-size: 1em;
+  }
+}
+@media (min-width: 200px) and (max-width: 722px) {
+  .titleSection h3{
+    font-size: 2em;
+  }
+  .titleSection span.favEffect{
+    font-size: 1em;
+  }
+}

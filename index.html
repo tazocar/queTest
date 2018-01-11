@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>QueVemos</title>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Kalam:700" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/media.css">
+</head>
+<body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <!-- MENU VERSION DESKTOP (AGREGADO MENU HAMBURGUESA) -->
+        <a href="" class="brand-logo center"><span class="navTitle">Hey!</span></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#modal1" class="modal-trigger">Iniciar Sesión</a></li>
+          <li><a href="#modal2" class="modal-trigger" id="btnSignUpOne">Registrase</a></li>
+          <li><a href="#">Notificaciones</a></li>
+          <li><a href="#">Compartir</a></li>
+        </ul>
+        <!-- MENU VERSION MOBILE -->
+        <ul class="side-nav blue-grey darken-4" id="mobile-demo">
+          <li><img src="assets/images/imageContenido2.jpg" class="user-avatar responsive-img circle" alt=""></li>
+          <li><a href="#"><span class="orange-text">Perfil</span></a></li>
+          <li><a href="#"><span class="orange-text">Vota Aquí!</span></a></li>
+          <li><a href="#"><span class="orange-text">Notificaciones</span></a></li>
+          <li><a href="#"><span class="orange-text">Votar</span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!--Modales-->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input type="email" placeholder="Correo electronico" class="validate" id="txtEmail">
+              <label for="icon_prefix">User</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">lock</i>
+              <input type="password" class="validate" id="txtPassword">
+              <label for="icon_lock">Pasword</label>
+            </div>
+          </div>
+        </form>
+        <button type="button" id="btnLogin">ingresar</button>
+      </div>  
+    </div>
+  </div>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">account_circle</i>
+              <input type="email" placeholder="Correo electronico" class="validate" id="txtEmailReg">
+              <label for="icon_prefix">User</label>
+            </div>
+            <div class="input-field col s6">
+              <i class="material-icons prefix">lock</i>
+              <input type="password" class="validate" id="txtPasswordReg">
+              <label for="icon_lock">Pasword</label>
+            </div>
+          </div>
+        </form>
+        <button type="button" id="btnSignUp">ingresar</button>
+      </div>  
+    </div>
+  </div>
+  <!-- termino de los Modales--> 
+  <section>
+    <div class="row clearMargin">
+      <div class="col s12 sectionOneBG containerTest">
+        <div class="row ">
+          <div class="col s12 m9 offset-m3 l5 offset-l7 xl4 offset-xl8">
+            <div class="textSectionOne">
+              <h2>Bienvenido</h2>
+              <h4>A la experiencia</h4>
+              <p><span class="smallCall">Hey! que Vemos?</span>, La aplicación que te permite crear instancias para compartir y conocer personas con afinidades cinematográficas como las uyas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row clearMargin">
+      <div class="col s12">
+        <div class="titleSection">
+          <h3 class="clearMargin"><span class="favEffect">Elige</span> tu película <span class="favEffect">Favorita!</span></h3>
+        </div>
+        <div class="row clearMargin">
+          <div class="col s6 img1"></div>
+          <div class="col s6 img2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row clearMargin">
+      <div class="col s12">
+        
+      </div>
+    </div>
+  </section>
+  <footer class="containerFlex">
+    <div class="row clearMargin">
+      <div class="col s12">
+        <div>
+          <h4 >Puma 1180, Recoleta,</h4>
+          <h4 class="direction">Región Metropolitana</h4>
+          <ul class="social">
+            <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+          </ul>
+        </div>
+        <p>© 2017 All rights reserved by Hey! Que Vemos?. Terms Privacy</p>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
