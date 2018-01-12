@@ -16,23 +16,27 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <!-- MENU VERSION DESKTOP (AGREGADO MENU HAMBURGUESA) -->
-        <a href="" class="brand-logo center"><span class="navTitle">Hey!</span></a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="#modal1" class="modal-trigger">Iniciar Sesión</a></li>
-          <li><a href="#modal2" class="modal-trigger" id="btnSignUpOne">Registrase</a></li>
-          <li><a href="#">Notificaciones</a></li>
-          <li><a href="#">Compartir</a></li>
-        </ul>
-        <!-- MENU VERSION MOBILE -->
-        <ul class="side-nav blue-grey darken-4" id="mobile-demo">
-          <li><img src="assets/images/imageContenido2.jpg" class="user-avatar responsive-img circle" alt=""></li>
-          <li><a href="#"><span class="orange-text">Perfil</span></a></li>
-          <li><a href="#"><span class="orange-text">Vota Aquí!</span></a></li>
-          <li><a href="#"><span class="orange-text">Notificaciones</span></a></li>
-          <li><a href="#"><span class="orange-text">Votar</span></a></li>
-        </ul>
+        <div class="container">
+          <!-- MENU VERSION DESKTOP (AGREGADO MENU HAMBURGUESA) -->
+          <a href="" class="brand-logo"><span class="navTitle">Hey!</span></a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">          
+            <li><a href="#" id="toVote">Vota!</a></li>
+            <li><a href="#" id="toSearch">Busca</a></li>
+            <li><a href="#" id="toChat">Chatea</a></li>
+            <li><a href="#" id="toFindUs">Encuéntranos</a></li>
+            <li><a href="#modal1" class="modal-trigger">Inicia Sesión</a></li>
+            <li><a href="#modal2" class="modal-trigger" id="btnSignUpOne">Regístrate</a></li>
+          </ul>
+          <!-- MENU VERSION MOBILE -->
+          <ul class="side-nav blue-grey darken-4" id="mobile-demo">
+            <li><img src="assets/images/imageContenido2.jpg" class="user-avatar responsive-img circle" alt=""></li>
+            <li><a href="#"><span class="orange-text">Perfil</span></a></li>
+            <li><a href="#"><span class="orange-text">Vota Aquí!</span></a></li>
+            <li><a href="#"><span class="orange-text">Notificaciones</span></a></li>
+            <li><a href="#"><span class="orange-text">Votar</span></a></li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
@@ -96,15 +100,103 @@
     </div>
   </section>
   <section>
-    <div class="row clearMargin">
+    <div class="row clearMargin voteSection">
       <div class="col s12">
         <div class="titleSection">
           <h3 class="clearMargin"><span class="favEffect">Elige</span> tu película <span class="favEffect">Favorita!</span></h3>
         </div>
         <div class="row clearMargin">
-          <div class="col s6 img1"></div>
-          <div class="col s6 img2"></div>
+          <div class="col s12 m6 img1 voteOne"></div>
+          <div class="col s12 m6 img2 voteTwo"></div>
         </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row clearMargin">
+      <div class="col s12">
+        <div class="row clearMargin">
+          <div class="col s6 m3">
+            <div class="row clearMargin">
+              <div class="col s12 kidsVote">
+                <div class="col s6 bgVoteSelector"></div>
+                <div class="col s6 bgVoteSelector"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col s6 m3">
+            <div class="row clearMargin">
+              <div class="col s12 romanticVote">
+                <div class="col s6 bgVoteSelector"></div>
+                <div class="col s6 bgVoteSelector"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col s6 m3">
+            <div class="row clearMargin">
+              <div class="col s12 classicVote">
+                <div class="col s6 bgVoteSelector"></div>
+                <div class="col s6 bgVoteSelector"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col s6 m3">
+            <div class="row clearMargin">
+              <div class="col s12 actionVote">
+                <div class="col s6 bgVoteSelector"></div>
+                <div class="col s6 bgVoteSelector"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row clearMargin searchSection">
+      <div class="col s12">
+        <div class="titleSection">
+          <h3 class="clearMargin">Busca tu película<span class="favEffect"> Aquí!</span><span class="favEffect"></span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row clearMargin">
+      <div class="input-field col s10 offset-s1">
+        <label for="searchMovie">Buscar película (Ej: Toy Story ...) </label>
+        <input type="text" id="searchMovie">
+      </div>
+      <div class="row clearMargin" id="displayMovies">
+        <!-- Aquí van a ir las películas -->
+      </div>
+    </div>
+  </section>
+  <section id="thirdSection">
+    <div class="row clearMargin">
+      <div class="col s12">
+        <div class="titleSection">
+          <h3 class="clearMargin">Mira el trailer de tu película <span class="favEffect">Favorita!</span></h3>
+        </div>
+        <div class="row clearMargin">
+          <div class="col s12">
+            <div class="video-container">
+              <iframe src="https://www.youtube.com/embed/htwlR51npL4" frameborder="0" allowfullscreen></iframe>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="fifthSection"> <!-- Aca debe ir la info de las peliculas para que el usuario vote-->
+    <div class="row clearMargin">
+      <div class="col s12">
+        <div class="titleSection">
+          <h3 class="clearMargin">Donde vernos<span class="favEffect">¡Ahora!</span> <span class="favEffect"></span></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row clearMargin mapSection">
+      <div class="col s12">
+        <div id="map"></div>
       </div>
     </div>
   </section>
@@ -116,21 +208,27 @@
           <button type="button" id="btnSalir">Salir</button>
         </div>
       </div>
-      <form action="">
-       <div>
-           <label for="nombre">Nombre</label>
-           <input type="text" id="nombre">
-       </div>
-       <div>
-           <label for="mensaje">mensaje</label>
-           <textarea id="mensaje"></textarea>
-       </div>
-       <button type="button" id="btnEnviar">enviar</button>
-       <button id="actualPhoto">Actualizar</button>
-      </form>
-      <ul id="chatUL">
-      <li><div class="miniImg"></div><b>nombre: </b>Hola</li>
-      </ul>
+      <div class="col s12 m8 offset-m2">
+        <form action="">
+         <div>
+             <label for="mensaje">mensaje</label>
+             <textarea id="mensaje"></textarea>
+         </div>
+         <button type="button" id="btnEnviar">enviar</button>
+         <button id="actualPhoto">Actualizar</button>
+        </form>
+        <div id="chatSection">
+          <ul id="chatUL">
+            <li>
+              <div class="miniImg"></div>
+              <div class="userChatInfo">
+                <p class="nameStyle">Daniela Azócar:</p>
+                <p class="messageStyle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint excepturi tempora voluptatem nesciunt, pariatur, reiciendis earum cupiditate placeat ex vel magnam neque, non quam ipsam ipsa molestiae sunt debitis. Iusto.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
   <footer class="containerFlex">
@@ -153,6 +251,7 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTKa1z0dGZbp6r5RP_o_zGfz_I3B_JvZw&libraries=places&callback=initMap" async defer></script>
   <script type="text/javascript" src="assets/js/materialize.min.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

@@ -4,7 +4,7 @@
 #mobile-demo{
   z-index: 3;
 }
-.row .col.s12{
+.row .col{
   padding: 0;
 }
 .nav-wrapper {
@@ -17,6 +17,7 @@
   background:  linear-gradient(to bottom right, rgba(0, 0, 0, 0)40%, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 1)), url(../images/bgOne.jpg) no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   height: 100vh;
 }
 .sectionOneBG h2{
@@ -58,13 +59,13 @@
   display: flex; /* or inline-flex */
   align-items: flex-end;
 }
-.img1{
+.voteOne{
   background-image: url(../images/cont2.jpg);
   height: 80vh;
   background-size: cover;
-  background-position: 50% 1%;
+  background-position: center;
 }
-.img2{
+.voteTwo{
   background-image: url(../images/cont1.jpg);
   height: 80vh;
   background-size: cover;
@@ -143,10 +144,101 @@ footer h4.direction{
 .miniImg{
   width: 40px;
   height: 40px;
+  background-color: pink;
   background-position: center;
   background-size: cover;
   border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
   margin: 0.5em;
+}
+#map {
+  width: 100%;
+  height: 80vh;
+}
+.colContainer {
+    display: table;
+    width: 100%;
+}
+.colTable {
+    display: table-cell;
+    padding: 16px;
+}
+.premieres{
+  background-color: pink;
+}
+.userChatInfo{
+  display: inline-block;
+  vertical-align: top;
+  width: 80%;
+}
+.nameStyle{
+  font-family: 'Heebo', sans-serif;
+  font-weight: 800;
+  font-size: 1.3em;
+  margin: 0;
+}
+.messageStyle{
+  font-family: 'Heebo', sans-serif;
+  font-size: 1em;
+  margin: 0;
+}
+#chatSection{
+  height: 200px;
+  background-color: #0001;
+  overflow-y: auto;
+  margin-bottom: 5em;
+}
+#chatUL li{
+  margin-bottom: 1em;
+}
+.effectContainer{
+  overflow: hidden;
+}
+.movie h4{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+}
+.movie{
+  text-align: center;
+}
+.bgVoteSelector{
+  background-position: center;
+  background-size: cover;
+  height: 20vh;
+}
+.imageSearch{
+  height: 20em;
+  background-color: red;
+  opacity: 0.8;
+  background-position: center;
+  transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.imageSearch:active{
+  opacity: 1;
+}
+.imageSearch:hover {
+  transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')"; /* IE8 */
+   filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand'); /* IE6 and 7 */ 
+} 
+.text{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 100px;      /* fallback */
+   -webkit-line-clamp: 5; /* number of lines to show */
+   -webkit-box-orient: vertical;
+   padding: 0 1em;
 }

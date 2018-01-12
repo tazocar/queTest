@@ -26,4 +26,17 @@
   .titleSection span.favEffect{
     font-size: 1em;
   }
+  .voteOne{
+    height: 35vh;
+    background-position: center;
+  }
+  .voteTwo{
+    height: 35vh;
+    background-position: 50% 1%;
+  }  
+}
+@media (min-width: 200px) and (max-width: 1061px) {
+  .movie h4{
+    font-size: 1.4em;
+  }
 }
