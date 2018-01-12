@@ -3,6 +3,8 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
   $('#textarea1').val('New Text');
   $('#textarea1').trigger('autoresize');
+  $(".voteOneHover").hide();
+  $(".voteTwoHover").hide();
 });
 // Botones Menu
 $(".toVote").click(function(){
@@ -119,9 +121,26 @@ firebase.auth().onAuthStateChanged(function(user) {
       userImg = (snap.val()[userUId]).img;
       console.log(snap.val());
     });
+    // Votaciones
+    var btnCounter = document.getElementById('vote'); //variable primer boton
+    var counter = document.getElementById('contar');  // variable segundo boton
+    var btnSecndCounter = document.getElementById('vote2'); //primer contador
+    var scndCounter = document.getElementById('contar2'); //segundo contador
+    //valores pre-definidos.
+    var optOneVote = 2340; 
+    var optTwoVote = 2500;
+    //funcion voto de la derecha
+
+    btnCounter.addEventListener('click',function(){
+       counter.value = optTwoVote++;
+    });
+    //funcion voto de la izquierda
+    btnSecndCounter.addEventListener('click',function(){
+       scndCounter.value = optOneVote++;
+    });
+    /////// Fin Votaciones //////
 
     /////// Chat ///////
-
     //var txtNombre = document.getElementById('nombre');
     var txtMensaje = document.getElementById('mensaje');
     var btnEnviar = document.getElementById('btnEnviar');
@@ -338,4 +357,20 @@ $("#searchMovie").keyup( function(){
       }
     }
   });
+})
+
+// Esconder Votos si cambias de película
+$(".voteOne").hover(function(){
+  $(".voteOneHover").toggle();
+})
+$(".voteTwo").hover(function(){
+  $(".voteTwoHover").toggle();
+})
+$(".voteOne").click(function(){
+  $(".voteTwoHover").hide();
+  $(".voteOneHover").show();
+})
+$(".voteTwo").click(function(){
+  $(".voteTwoHover").show();
+  $(".voteOneHover").hide();
 })

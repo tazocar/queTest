@@ -116,8 +116,22 @@
           <h3 class="clearMargin"><span class="favEffect">Elige</span> tu película <span class="favEffect">Favorita!</span></h3>
         </div>
         <div class="row clearMargin">
-          <div class="col s12 m6 img1 voteOne"></div>
-          <div class="col s12 m6 img2 voteTwo"></div>
+          <div class="col s12 m6 img1 voteOne">
+            <div class="voteOneHover col s12">
+          <button id="vote"  class="btn-floating waves-effect waves-light lime" type="submit">
+            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+          </button>
+          <input type="text" name="contar" id="contar" readonly="readonly">
+        </div>
+          </div>
+          <div class="col s12 m6 img2 voteTwo">
+            <div class="voteTwoHover col s12">
+              <button id="vote2"  class="btn-floating waves-effect waves-light red" type="submit">
+                  <span><i class="fa fa-star" aria-hidden="true"></i></span>
+              </button>
+              <input type="text" name="contar" id="contar2" readonly="readonly">
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -269,6 +283,7 @@
   <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTKa1z0dGZbp6r5RP_o_zGfz_I3B_JvZw&libraries=places&callback=initMap" async defer></script>
   <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+  <script src="https://use.fontawesome.com/a701ffb969.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
