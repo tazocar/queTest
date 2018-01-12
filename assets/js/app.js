@@ -1,27 +1,28 @@
 $(document).ready(function(){
-    $('.carousel').carousel();
-    $('.modal').modal();
-    $(".button-collapse").sideNav();
+  $('.modal').modal();
+  $(".button-collapse").sideNav();
+  $('#textarea1').val('New Text');
+  $('#textarea1').trigger('autoresize');
 });
 // Botones Menu
-$("#toVote").click(function(){
+$(".toVote").click(function(){
   $('html, body').animate({
     scrollTop: ($('.voteSection').offset().top)
   },1000);
 });
-$("#toSearch").click(function(){
+$(".toSearch").click(function(){
   $('html, body').animate({
     scrollTop: ($('.searchSection').offset().top)
   },1000);
 });
-$("#toChat").click(function(){
-  $('html, body').animate({
-    scrollTop: ($('.chatSection').offset().top)
-  },1000);
-});
-$("#toFindUs").click(function(){
+$(".toFindUs").click(function(){
   $('html, body').animate({
     scrollTop: ($('.mapSection').offset().top)
+  },2000);
+});
+$(".toChat").click(function(){
+  $('html, body').animate({
+    scrollTop: ($('.chatContainer').offset().top)
   },2000);
 });
 (function (){ //iife una expresion de funcion invocada inmediatamente (function)
@@ -119,7 +120,7 @@ firebase.auth().onAuthStateChanged(function(user) {
       console.log(snap.val());
     });
 
-    /////// MajoChat! Funcionando Falta estilos ///////
+    /////// Chat ///////
 
     //var txtNombre = document.getElementById('nombre');
     var txtMensaje = document.getElementById('mensaje');
@@ -129,11 +130,16 @@ firebase.auth().onAuthStateChanged(function(user) {
     btnEnviar.addEventListener("click",function(){
        // var nombre = txtNombre.value; //toma el valor del nombre que se ingresa en el input
        var mensaje = txtMensaje.value; //toma el valor del text area;
-
-       firebase.database().ref('chat').push({
-           name: userEmail,
-           message : mensaje,
-       });
+       if (document.getElementById('mensaje').value.length > 0) {
+         firebase.database().ref('chat').push({
+             name: userEmail,
+             message : mensaje,
+         });
+         txtMensaje.value = "";
+       }
+       else {
+         alert("Por favor ingrese un mensaje válido")
+       }
     });
     //esta  funcion hara que firebase nos notifique de algun cambio, a todos los que esten conectados
     firebase.database().ref('chat')
@@ -143,7 +149,7 @@ firebase.auth().onAuthStateChanged(function(user) {
           var element = e.val(); //toma el valor real del elemento snapshot
           var nombre = element.name;
           var mensaje = element.message;
-          html += '<li><div class="miniImg" style="background-image:url(' + userImg + ')"></div><b>' + nombre + ': </b>' + mensaje + '</li>'
+          html += '<li class="chatTextBox"><div class="miniImg" style="background-image:url(' + userImg + ')"></div><div class="userChatInfo"><p p class="nameStyle">' + nombre + ':</p><p class="messageStyle">' + mensaje + '</p></div></li>'
 
        });
        chatUL.innerHTML = html;
@@ -326,7 +332,7 @@ $("#searchMovie").keyup( function(){
           if (response.Search[i].Poster != "N/A") {
             displayMovies.append("<div class='col s6 m3'><div class='movie'><div class='effectContainer'><div class='imageSearch' style='background-image:url(" + 
             response.Search[i].Poster + ")'></div></div><h4>" + 
-            response.Search[i].Title + "</h4><p class='text'>" + response.Search[i].Year + "</p></div></div>"
+            response.Search[i].Title + "</h4><p class='text'> Estrenada en: " + response.Search[i].Year + "</p></div></div>"
           );}
         }
       }

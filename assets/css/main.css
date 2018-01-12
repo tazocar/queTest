@@ -10,6 +10,50 @@
 .nav-wrapper {
   background-color: #FF5733;
 }
+.btn, .btn-large{
+  background-color: #FF5733;
+}
+.btn:hover, .btn-large:hover {
+  background-color: #fd6c4d;
+}
+.btn:focus, .btn-large:focus,
+.btn-floating:focus {
+  background-color: #c54327;
+}
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #FF5733;
+  -webkit-box-shadow: 0 1px 0 0 #FF5733;
+          box-shadow: 0 1px 0 0 #FF5733;
+}
+
+input:not([type]):focus:not([readonly]) + label,
+input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+input[type=password]:not(.browser-default):focus:not([readonly]) + label,
+input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+input[type=url]:not(.browser-default):focus:not([readonly]) + label,
+input[type=time]:not(.browser-default):focus:not([readonly]) + label,
+input[type=date]:not(.browser-default):focus:not([readonly]) + label,
+input[type=datetime]:not(.browser-default):focus:not([readonly]) + label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label,
+input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
+input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+input[type=search]:not(.browser-default):focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #FF5733;
+}
+
 .navTitle{
   font-family: 'Kalam', cursive;
 }
@@ -43,7 +87,7 @@
   font-family: 'Kalam', cursive;
 }
 .sectionOneBG p{
-  background-color: black;
+  background-color: #191b2d;
   color: white;
   padding: 2em;
   margin-top: -1.3em;
@@ -51,9 +95,6 @@
 }
 .sectionOneBG{
   font-family: 'Heebo', sans-serif;
-}
-.textSectionOne{
-
 }
 .containerTest {
   display: flex; /* or inline-flex */
@@ -87,6 +128,124 @@
   text-shadow: 2px 2px 3px black;
   font-size: 1.2em;
 }
+/* Chat design */
+.miniImg{
+  width: 40px;
+  height: 40px;
+  background-color: pink;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.5em;
+}
+#map {
+  width: 100%;
+  height: 80vh;
+}
+.colContainer {
+    display: table;
+    width: 100%;
+}
+.colTable {
+    display: table-cell;
+    padding: 16px;
+}
+.premieres{
+  background-color: pink;
+}
+.userChatInfo{
+  display: inline-block;
+  vertical-align: top;
+  width: 80%;
+  text-align: left;
+}
+.nameStyle{
+  font-family: 'Heebo', sans-serif;
+  font-weight: 800;
+  font-size: 1.3em;
+  margin: 0;
+}
+.messageStyle{
+  font-family: 'Heebo', sans-serif;
+  font-size: 1em;
+  margin: 0;
+}
+.chatContainer{
+  padding-bottom: 4em;
+}
+#chatSection{
+  height: 200px;
+  background-color: #0001;
+  overflow-y: auto;
+  padding: 1em 2em;
+  box-sizing: border-box;
+  margin-top: 5em;
+}
+#chatUL li{
+  margin-bottom: 1em;.
+  text-align: center;
+}
+.chatTextBox{
+  width: 100%;
+  word-wrap: break-word;
+}
+.effectContainer{
+  overflow: hidden;
+}
+.movie h4{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+}
+.movie{
+  text-align: center;
+}
+.bgVoteSelector{
+  background-position: center;
+  background-size: cover;
+  height: 20vh;
+}
+.imageSearch{
+  height: 20em;
+  background-color: red;
+  opacity: 0.8;
+  background-position: center;
+  transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.imageSearch:active{
+  opacity: 1;
+}
+.imageSearch:hover {
+  transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  -ms-transform: scale(1.5); /* IE 9 */
+} 
+.text{
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 100px;      /* fallback */
+   -webkit-line-clamp: 5; /* number of lines to show */
+   -webkit-box-orient: vertical;
+   padding: 0 1em;
+}
+.navbar-fixed { 
+  z-index: 9998;
+}
+.overAll { 
+  z-index: 9998;
+}
+/* Footer */
 footer{
   background-color: #191b2d;
   text-align: center;
@@ -139,106 +298,4 @@ footer h4.direction{
   display: flex;
   align-items: center;
   justify-content: center;
-}
-/* Chat design */
-.miniImg{
-  width: 40px;
-  height: 40px;
-  background-color: pink;
-  background-position: center;
-  background-size: cover;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0.5em;
-}
-#map {
-  width: 100%;
-  height: 80vh;
-}
-.colContainer {
-    display: table;
-    width: 100%;
-}
-.colTable {
-    display: table-cell;
-    padding: 16px;
-}
-.premieres{
-  background-color: pink;
-}
-.userChatInfo{
-  display: inline-block;
-  vertical-align: top;
-  width: 80%;
-}
-.nameStyle{
-  font-family: 'Heebo', sans-serif;
-  font-weight: 800;
-  font-size: 1.3em;
-  margin: 0;
-}
-.messageStyle{
-  font-family: 'Heebo', sans-serif;
-  font-size: 1em;
-  margin: 0;
-}
-#chatSection{
-  height: 200px;
-  background-color: #0001;
-  overflow-y: auto;
-  margin-bottom: 5em;
-}
-#chatUL li{
-  margin-bottom: 1em;
-}
-.effectContainer{
-  overflow: hidden;
-}
-.movie h4{
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  margin: 0;
-}
-.movie{
-  text-align: center;
-}
-.bgVoteSelector{
-  background-position: center;
-  background-size: cover;
-  height: 20vh;
-}
-.imageSearch{
-  height: 20em;
-  background-color: red;
-  opacity: 0.8;
-  background-position: center;
-  transition: all 1s ease;
-  -moz-transition: all 1s ease;
-  -ms-transition: all 1s ease;
-  -webkit-transition: all 1s ease;
-  -o-transition: all 1s ease;
-}
-.imageSearch:active{
-  opacity: 1;
-}
-.imageSearch:hover {
-  transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  -o-transform: scale(1.5);
-  -ms-transform: scale(1.5); /* IE 9 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand')"; /* IE8 */
-   filter: progid:DXImageTransform.Microsoft.Matrix(M11=1.5, M12=0, M21=0, M22=1.5, SizingMethod='auto expand'); /* IE6 and 7 */ 
-} 
-.text{
-   overflow: hidden;
-   text-overflow: ellipsis;
-   display: -webkit-box;
-   line-height: 16px;     /* fallback */
-   max-height: 100px;      /* fallback */
-   -webkit-line-clamp: 5; /* number of lines to show */
-   -webkit-box-orient: vertical;
-   padding: 0 1em;
 }

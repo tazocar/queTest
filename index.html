@@ -21,69 +21,79 @@
           <a href="" class="brand-logo"><span class="navTitle">Hey!</span></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">          
-            <li><a href="#" id="toVote">Vota!</a></li>
-            <li><a href="#" id="toSearch">Busca</a></li>
-            <li><a href="#" id="toChat">Chatea</a></li>
-            <li><a href="#" id="toFindUs">Encuéntranos</a></li>
+            <li><a href="#" class="toVote">Vota!</a></li>
+            <li><a href="#" id="toSearch" class="toSearch">Busca</a></li>
+            <li><a href="#" id="toChat" class="toChat testeando">Chatea</a></li>
+            <li><a href="#" id="toFindUs" class="toFindUs">Encuéntranos</a></li>
+            <li><a href="#" id="toFindUs" class="toFindUs">Encuéntranos</a></li>
             <li><a href="#modal1" class="modal-trigger">Inicia Sesión</a></li>
             <li><a href="#modal2" class="modal-trigger" id="btnSignUpOne">Regístrate</a></li>
           </ul>
           <!-- MENU VERSION MOBILE -->
           <ul class="side-nav blue-grey darken-4" id="mobile-demo">
-            <li><img src="assets/images/imageContenido2.jpg" class="user-avatar responsive-img circle" alt=""></li>
-            <li><a href="#"><span class="orange-text">Perfil</span></a></li>
-            <li><a href="#"><span class="orange-text">Vota Aquí!</span></a></li>
-            <li><a href="#"><span class="orange-text">Notificaciones</span></a></li>
-            <li><a href="#"><span class="orange-text">Votar</span></a></li>
+            <li><div class="user-view">
+              <div class="background">
+                <img src="assets/images/starBg.png">
+              </div>
+              <a href="#!user"><img class="circle" src="assets/images/profileImg.jpg"></a>
+              <a href="#!name"><span class="white-text name">Usuario:</span></a>
+              <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div></li>
+            <li><a href="#" class="white-text toVote">Vota!</a></li>
+            <li><a href="#" id="toSearch" class="toSearch white-text">Busca</a></li>
+            <li><a href="#" id="toChat" class="toChat white-text">Chatea</a></li>
+            <li><a href="#" id="toFindUs" class="toFindUs white-text">Encuéntranos</a></li>
+            <li><a href="#modal1" class="modal-trigger white-text" >Inicia Sesión</a></li>
+            <li><a href="#modal2" class="modal-trigger white-text" id="btnSignUpOne">Regístrate</a></li>
           </ul>
         </div>
       </div>
     </nav>
-  </div>
-  <!--Modales-->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">account_circle</i>
-              <input type="email" placeholder="Correo electronico" class="validate" id="txtEmail">
-              <label for="icon_prefix">User</label>
+    <!--Modales-->
+    <div id="modal1" class="modal overAll">
+      <div class="modal-content">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input type="email" placeholder="Correo electronico" class="validate" id="txtEmail">
+                <label for="icon_prefix">User</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">lock</i>
+                <input type="password" class="validate" id="txtPassword">
+                <label for="icon_lock">Pasword</label>
+              </div>
             </div>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">lock</i>
-              <input type="password" class="validate" id="txtPassword">
-              <label for="icon_lock">Pasword</label>
-            </div>
-          </div>
-        </form>
-        <button type="button" id="btnLogin">ingresar</button>
-      </div>  
+          </form>
+          <button type="button" id="btnLogin">ingresar</button>
+        </div>  
+      </div>
     </div>
-  </div>
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <div class="row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">account_circle</i>
-              <input type="email" placeholder="Correo electronico" class="validate" id="txtEmailReg">
-              <label for="icon_prefix">User</label>
+    <div id="modal2" class="modal overAll">
+      <div class="modal-content">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+                <input type="email" placeholder="Correo electronico" class="validate" id="txtEmailReg">
+                <label for="icon_prefix">User</label>
+              </div>
+              <div class="input-field col s6">
+                <i class="material-icons prefix">lock</i>
+                <input type="password" class="validate" id="txtPasswordReg">
+                <label for="icon_lock">Pasword</label>
+              </div>
             </div>
-            <div class="input-field col s6">
-              <i class="material-icons prefix">lock</i>
-              <input type="password" class="validate" id="txtPasswordReg">
-              <label for="icon_lock">Pasword</label>
-            </div>
-          </div>
-        </form>
-        <button type="button" id="btnSignUp">ingresar</button>
-      </div>  
+          </form>
+          <button type="button" id="btnSignUp">ingresar</button>
+        </div>  
+      </div>
     </div>
+    <!-- termino de los Modales--> 
   </div>
-  <!-- termino de los Modales--> 
   <section>
     <div class="row clearMargin">
       <div class="col s12 sectionOneBG containerTest">
@@ -201,25 +211,24 @@
     </div>
   </section>
   <section>
-    <div class="row clearMargin">
+    <div class="row clearMargin chatContainer">
       <div class="col s12">
-        <div id="fourthSection"> <!-- Aca debe ir la info del usuario que ingreso-->
+        <div id="fourthSection">
           <button type="button" id="btnVolver">Volver</button>
           <button type="button" id="btnSalir">Salir</button>
         </div>
       </div>
+      <div class="row clearMargin">
+      <div class="col s12">
+        <div class="titleSection">
+          <h3 class="clearMargin">Compartamos <span class="favEffect">experiencia!</span> <span class="favEffect"></span></h3>
+        </div>
+      </div>
+    </div>
       <div class="col s12 m8 offset-m2">
-        <form action="">
-         <div>
-             <label for="mensaje">mensaje</label>
-             <textarea id="mensaje"></textarea>
-         </div>
-         <button type="button" id="btnEnviar">enviar</button>
-         <button id="actualPhoto">Actualizar</button>
-        </form>
         <div id="chatSection">
-          <ul id="chatUL">
-            <li>
+          <ul id="chatUL" class="center">
+            <li class="chatTextBox">
               <div class="miniImg"></div>
               <div class="userChatInfo">
                 <p class="nameStyle">Daniela Azócar:</p>
@@ -228,6 +237,13 @@
             </li>
           </ul>
         </div>
+        <form class="input-field">
+          <div>
+              <textarea id="mensaje" class="materialize-textarea"></textarea>
+              <label for="mensaje">Textarea</label>
+          </div>
+          <button type="button" id="btnEnviar" class="btn colorBrand right">Enviar</button>
+        </form>
       </div>
     </div>
   </section>
@@ -238,11 +254,11 @@
           <h4 >Puma 1180, Recoleta,</h4>
           <h4 class="direction">Región Metropolitana</h4>
           <ul class="social">
-            <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-            <li><a href=""><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-            <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-            <li><a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-            <li><a href=""><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+            <li><a><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+            <li><a><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
           </ul>
         </div>
         <p>© 2017 All rights reserved by Hey! Que Vemos?. Terms Privacy</p>
