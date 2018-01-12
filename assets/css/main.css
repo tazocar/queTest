@@ -139,3 +139,14 @@ footer h4.direction{
   align-items: center;
   justify-content: center;
 }
+/* Chat design */
+.miniImg{
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0.5em;
+}

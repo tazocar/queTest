@@ -37,13 +37,10 @@ btnLogin.addEventListener('click', e => {
   promise.catch( e => console.log(e.menssage));
 });
 
-
-
 btnVolver.addEventListener('click', e => {
   $('#thirdSection').hide();
-  $('#second').show();
+  $('#secondSection').show();
 });
-
 
 //pasos para poder afiliarte con correo y contraseña
 btnSignUp.addEventListener("click", e => {
@@ -78,17 +75,17 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     $('#thirdSection').show();
     $('#fourthSection').hide();
   }
- 
 });
 }())
 
 // Revisa el estado del usuario según cambios en el logeo
 firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
   var currentUser = firebase.auth().currentUser;
   var userEmail = firebase.auth().currentUser.email;
   var userUId = firebase.auth().currentUser.uid;
   const dbRef = firebase.database().ref().child("users");
-  if (user) {
+  var userImg = "";
     // set para editar y agregar data
     firebase.database().ref('users/' + userUId).set({
       username: "Nombre",
@@ -96,11 +93,58 @@ firebase.auth().onAuthStateChanged(function(user) {
       img: "https://s3.amazonaws.com/37assets/svn/1065-IMG_2529.jpg",
     });
     console.log(userUId)
-    // dbRef.on("value", function(snap){
-    //   console.log((snap.val()[userUId]).email);
-    //   console.log(snap.val());
-    // })
+    dbRef.on("value", function(snap){
+      userImg = (snap.val()[userUId]).img;
+      console.log(snap.val());
+    });
+
+    /////// MajoChat! Funcionando Falta estilos ///////
+
+    var txtNombre = document.getElementById('nombre');
+    var txtMensaje = document.getElementById('mensaje');
+    var btnEnviar = document.getElementById('btnEnviar');
+    var chatUL = document.getElementById('chatUL')
+
+    btnEnviar.addEventListener("click",function(){
+       var nombre = txtNombre.value; //toma el valor del nombre que se ingresa en el input
+       var mensaje = txtMensaje.value; //toma el valor del text area;
+
+       firebase.database().ref('chat').push({
+           name: userEmail,
+           message : mensaje,
+       });
+    });
+    //esta  funcion hara que firebase nos notifique de algun cambio, a todos los que esten conectados
+    firebase.database().ref('chat')
+    .on('value',function(snapshot){
+       var html ='';
+       snapshot.forEach(function(e){
+           var element = e.val(); //toma el valor real del elemento snapshot
+           var nombre = element.name;
+           var mensaje = element.message;
+          html += '<li><div class="miniImg" style="background-image:url(' + userImg + ')"></div><b>' + nombre + ': </b>' + mensaje + '</li>'
+
+       });
+       chatUL.innerHTML = html;
+    });
+    /////// Fin MajoChat! ///////
   } else {
     console.log("not logged");
   }
 });
+
+
+/*var user = firebase.auth().currentUser;
+if (user != null) {
+  user.providerData.forEach(function (profile) {
+    console.log("Sign-in provider: "+profile.providerId);
+    console.log("  Provider-specific UID: "+profile.uid);
+    console.log("  Name: "+profile.displayName);
+    console.log("  Email: "+profile.email);
+    console.log("  Photo URL: "+profile.photoURL);
+  });
+}
+
+$("#actualPhoto").click(function(){
+  
+})*/

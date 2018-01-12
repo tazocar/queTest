@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>QueVemos</title>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Kalam:700" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="assets/css/materialize.min.css"  media="screen,projection"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -82,55 +83,20 @@
   <!-- termino de los Modales--> 
   <section>
     <div class="row clearMargin">
-      <div class="col s12 sectionOneBG containerTest">
+      <div class="col s12 sectionOneBG containerFlex">
         <div class="row ">
           <div class="col s12 m9 offset-m3 l5 offset-l7 xl4 offset-xl8">
-            <div class="textSectionOne">
-              <h2>Bienvenido</h2>
-              <h4>A la experiencia</h4>
-              <p><span class="smallCall">Hey! que Vemos?</span>, La aplicación que te permite crear instancias para compartir y conocer personas con afinidades cinematográficas como las uyas.</p>
+            <div class="textSectionOne logedOne">
+              <h2>ESTÁS</h2>
+              <h4>LOGEADO!</h4>
+            </div>
+            <div class="textSectionOne delogedOne hidden">
+              <h2>NO MAN!</h2>
+              <h4>NO ESTÁS LOGEADO!</h4>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section>
-    <div class="row clearMargin">
-      <div class="col s12">
-        <div class="titleSection">
-          <h3 class="clearMargin"><span class="favEffect">Elige</span> tu película <span class="favEffect">Favorita!</span></h3>
-        </div>
-        <div class="row clearMargin">
-          <div class="col s6 img1"></div>
-          <div class="col s6 img2"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section>
-    <div class="row clearMargin">
-      <div class="col s12">
-        <div id="fourthSection"> <!-- Aca debe ir la info del usuario que ingreso-->
-          <button type="button" id="btnVolver">Volver</button>
-          <button type="button" id="btnSalir">Salir</button>
-        </div>
-      </div>
-      <form action="">
-       <div>
-           <label for="nombre">Nombre</label>
-           <input type="text" id="nombre">
-       </div>
-       <div>
-           <label for="mensaje">mensaje</label>
-           <textarea id="mensaje"></textarea>
-       </div>
-       <button type="button" id="btnEnviar">enviar</button>
-       <button id="actualPhoto">Actualizar</button>
-      </form>
-      <ul id="chatUL">
-      <li><div class="miniImg"></div><b>nombre: </b>Hola</li>
-      </ul>
     </div>
   </section>
   <footer class="containerFlex">
@@ -152,7 +118,6 @@
     </div>
   </footer>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
   <script type="text/javascript" src="assets/js/materialize.min.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
